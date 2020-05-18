@@ -34,7 +34,7 @@ exports.config = {
     compiler: []
   },
 
-  // Enable TypeScript for the tests
+  // Enable TypeScript for the core
   onPrepare() {
     require('ts-node').register({
       project: 'e2e/tsconfig.e2e.json'

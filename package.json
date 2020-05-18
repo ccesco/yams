@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "pree2e": "webdriver-manager update",
-    "e2e": "protractor e2e/protractor.conf.js"
+    "e2e": "protractor e2e/protractor.conf.js",
+    "test-core": "set TS_NODE_PROJECT=./tests/tsconfig.json&& cucumber-js -p default"
   },
   "private": true,
   "dependencies": {
@@ -36,6 +37,8 @@
     "chai": "^4.2.0",
     "codelyzer": "^5.1.2",
     "cucumber": "^6.0.5",
+    "cucumber-pretty": "^6.0.0",
+    "cucumber-tsflow": "^3.2.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~5.0.0",
@@ -47,6 +50,6 @@
     "protractor-cucumber-framework": "^6.2.1",
     "ts-node": "^8.10.1",
     "tslint": "~6.1.0",
-    "typescript": "~3.8.3"
+    "typescript": "3.8.3"
   }
 }
