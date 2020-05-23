@@ -30,3 +30,33 @@ Feature: Combinaison des dés
       | 2    | 1    | 1    | 1    | 1    | oui    |
       | 1    | 1    | 1    | 1    | 1    | oui    |
       | 1    | 1    | 6    | 6    | 1    | oui    |
+
+  Scenario Outline: Determiner si la combinaison carre est possible
+    Given Je suis un joueur
+    When le premier dés est <des1>
+    And  le deuxième dés est <des2>
+    And  le troisième dés est <des3>
+    And  le quatrieme dés est <des4>
+    And  le cinquieme dés est <des5>
+    Then c'est un carre <carre>
+
+    Examples:
+      | des1 | des2 | des3 | des4 | des5 | carre |
+      | 1    | 2    | 3    | 4    | 5    | non   |
+      | 1    | 3    | 3    | 5    | 6    | non   |
+      | 5    | 4    | 3    | 2    | 1    | non   |
+      | 1    | 2    | 2    | 2    | 5    | non   |
+      | 1    | 3    | 3    | 3    | 4    | non   |
+      | 6    | 3    | 4    | 4    | 4    | non   |
+      | 1    | 1    | 1    | 1    | 2    | oui   |
+      | 1    | 1    | 1    | 1    | 3    | oui   |
+      | 2    | 1    | 1    | 1    | 1    | oui   |
+      | 3    | 1    | 1    | 1    | 1    | oui   |
+      | 1    | 3    | 1    | 1    | 1    | oui   |
+      | 1    | 4    | 1    | 1    | 1    | oui   |
+      | 1    | 1    | 3    | 1    | 1    | oui   |
+      | 1    | 1    | 4    | 1    | 1    | oui   |
+      | 1    | 1    | 1    | 3    | 1    | oui   |
+      | 1    | 1    | 1    | 4    | 1    | oui   |
+      | 3    | 3    | 3    | 3    | 3    | oui   |
+      | 4    | 4    | 4    | 4    | 4    | oui   |

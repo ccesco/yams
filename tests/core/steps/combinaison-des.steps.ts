@@ -39,9 +39,16 @@ export class CombinaisonDesSteps {
   }
 
   @then(/c'est un brelan (.*)/)
-  public accountBalanceShouldEqual(brelan: string) {
-    const isBrelan = brelan.toLowerCase() === 'oui';
+  public isBrelan(ouiNon: string) {
+    const isBrelan = ouiNon.toLowerCase() === 'oui';
     const jet: Jet = new Jet(this.listeDes);
     assert.equal(CombinaisonDes.isBrelan(jet), isBrelan);
+  }
+
+  @then(/c'est un carre (.*)/)
+  public isCarre(ouiNon: string) {
+    const isCarre = ouiNon.toLowerCase() === 'oui';
+    const jet: Jet = new Jet(this.listeDes);
+    assert.equal(CombinaisonDes.isCarre(jet), isCarre);
   }
 }
