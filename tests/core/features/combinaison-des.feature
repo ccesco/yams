@@ -60,3 +60,23 @@ Feature: Combinaison des dés
       | 1    | 1    | 1    | 4    | 1    | oui   |
       | 3    | 3    | 3    | 3    | 3    | oui   |
       | 4    | 4    | 4    | 4    | 4    | oui   |
+
+  Scenario Outline: Determiner si la combinaison yams est possible
+    Given Je suis un joueur
+    When le premier dés est <des1>
+    And  le deuxième dés est <des2>
+    And  le troisième dés est <des3>
+    And  le quatrieme dés est <des4>
+    And  le cinquieme dés est <des5>
+    Then c'est un yams <yams>
+
+    Examples:
+      | des1 | des2 | des3 | des4 | des5 | yams |
+      | 1    | 2    | 3    | 4    | 5    | non  |
+      | 1    | 1    | 3    | 4    | 5    | non  |
+      | 1    | 1    | 1    | 4    | 5    | non  |
+      | 1    | 1    | 1    | 1    | 5    | non  |
+      | 1    | 1    | 1    | 1    | 1    | oui  |
+      | 3    | 3    | 3    | 3    | 3    | oui  |
+      | 6    | 6    | 6    | 6    | 6    | oui  |
+

@@ -4,6 +4,7 @@ import {descendingSort} from '../../utils/sort-utils';
 
 export const MIN_DES_BRELAN = 3;
 export const MIN_DES_CARRE = 4;
+export const MIN_DES_YAMS = 5;
 
 export class CombinaisonDes {
 
@@ -15,6 +16,9 @@ export class CombinaisonDes {
 
   static isCarre = (lance: Jet): boolean =>
     CombinaisonDes.getMaxNumberDisctinct(lance.getJet()) >= MIN_DES_CARRE
+
+  static isYams = (lance: Jet): boolean =>
+    CombinaisonDes.getMaxNumberDisctinct(lance.getJet()) >= MIN_DES_YAMS
 
   private static countDistinctElement = (lance: Array<Des>): Array<number> => {
     const numberDistinctElement = Array<number>();
