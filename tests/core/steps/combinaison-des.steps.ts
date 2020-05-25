@@ -15,27 +15,27 @@ export class CombinaisonDesSteps {
 
   @when(/le premier dés est (\d*)/)
   public premierDes(valeurDes: number) {
-    this.listeDes.push(new Des(valeurDes));
+    this.listeDes.push(new Des(+valeurDes));
   }
 
   @when(/le deuxième dés est (\d*)/)
   public deuxiemeDes(valeurDes: number) {
-    this.listeDes.push(new Des(valeurDes));
+    this.listeDes.push(new Des(+valeurDes));
   }
 
   @when(/le troisième dés est (\d*)/)
   public troisiemeDes(valeurDes: number) {
-    this.listeDes.push(new Des(valeurDes));
+    this.listeDes.push(new Des(+valeurDes));
   }
 
   @when(/le quatrieme dés est (\d*)/)
   public quatriemeDes(valeurDes: number) {
-    this.listeDes.push(new Des(valeurDes));
+    this.listeDes.push(new Des(+valeurDes));
   }
 
   @when(/le cinquieme dés est (\d*)/)
   public cinquiemeDes(valeurDes: number) {
-    this.listeDes.push(new Des(valeurDes));
+    this.listeDes.push(new Des(+valeurDes));
   }
 
   @then(/c'est un brelan (.*)/)
@@ -64,5 +64,12 @@ export class CombinaisonDesSteps {
     const isYams = ouiNon.toLowerCase() === 'oui';
     const jet: Jet = new Jet(this.listeDes);
     assert.equal(CombinaisonDes.isFull(jet), isYams);
+  }
+
+  @then(/c'est une grande suite (.*)/)
+  public isGrandeSuite(ouiNon: string) {
+    const isYams = ouiNon.toLowerCase() === 'oui';
+    const jet: Jet = new Jet(this.listeDes);
+    assert.equal(CombinaisonDes.isGrandeSuite(jet), isYams);
   }
 }

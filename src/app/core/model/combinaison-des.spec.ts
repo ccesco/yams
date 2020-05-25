@@ -126,4 +126,35 @@ describe('CombinaisonDes', () => {
       });
     });
   });
+
+  describe('Test de la combinaison Grande Suite', () => {
+    describe('est une grande suite', () => {
+      it('ordre croissant', () => {
+        const lance: Jet = new Jet([new Des(2), new Des(3), new Des(4), new Des(5), new Des(6)]);
+        expect(CombinaisonDes.isGrandeSuite(lance)).toBeTruthy();
+      });
+      it('ordre decroissant', () => {
+        const lance: Jet = new Jet([new Des(6), new Des(5), new Des(4), new Des(3), new Des(2)]);
+        expect(CombinaisonDes.isGrandeSuite(lance)).toBeTruthy();
+      });
+      it('desordre', () => {
+        const lance: Jet = new Jet([new Des(2), new Des(3), new Des(6), new Des(5), new Des(4)]);
+        expect(CombinaisonDes.isGrandeSuite(lance)).toBeTruthy();
+      });
+    });
+    describe('pas une grande suite', () => {
+      it('avec un 1', () => {
+        const lance: Jet = new Jet([new Des(1), new Des(2), new Des(3), new Des(4), new Des(5)]);
+        expect(CombinaisonDes.isGrandeSuite(lance)).toBeFalsy();
+      });
+      it('avec deux chiffres pareil (2)', () => {
+        const lance: Jet = new Jet([new Des(2), new Des(2), new Des(3), new Des(4), new Des(5)]);
+        expect(CombinaisonDes.isGrandeSuite(lance)).toBeFalsy();
+      });
+      it('avec deux chiffres pareil (4)', () => {
+        const lance: Jet = new Jet([new Des(2), new Des(3), new Des(4), new Des(4), new Des(5)]);
+        expect(CombinaisonDes.isGrandeSuite(lance)).toBeFalsy();
+      });
+    });
+  });
 });
