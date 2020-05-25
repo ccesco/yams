@@ -58,4 +58,11 @@ export class CombinaisonDesSteps {
     const jet: Jet = new Jet(this.listeDes);
     assert.equal(CombinaisonDes.isYams(jet), isYams);
   }
+
+  @then(/c'est un full (.*)/)
+  public isFull(ouiNon: string) {
+    const isYams = ouiNon.toLowerCase() === 'oui';
+    const jet: Jet = new Jet(this.listeDes);
+    assert.equal(CombinaisonDes.isFull(jet), isYams);
+  }
 }
